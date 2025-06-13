@@ -1,0 +1,41 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Atualiza o cache do apt
+      apt:
+        update_cache: yes
+      tags:
+        - packages
+
+    - name: Instala o Nginx
+      apt:
+        name: nginx
+        state: present
+      tags:
+        - packages
+
+    - name: Copia o restante dos arquivos web para o diretório do Nginx
+      ansible.builtin.copy:
+        src: files/ 
+        dest: /var/www/html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+
+    - name: Renderiza e copia a página index.html com o módulo template
+      ansible.builtin.template:
+        src: files/index.html.j2
+        dest: /var/www/html/index.html 
+        owner: www-data
+        group: www-data
+        mode: '0644'
+      notify:
+        - Reiniciar Nginx
+
+  handlers:
+    - name: Reiniciar Nginx
+      service:
+        name: nginx
+        state: restarted

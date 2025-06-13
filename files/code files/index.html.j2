@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Invertido | Semana Front-end</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <body class="light-theme-aria-label">
+    <span class="light-theme-aria-label">O site está utilizando o tema light</span>
+    <header class="aria-label">Cabeçalho da página.</header>
+    <audio id="music" autoplay>
+        <source src="./assets/musics/normal-world.mpeg" aria-details="Áudio do site">
+    </audio>
+    <header class="header-content">
+        <img class="invert-element" src="assets/images/banner/logo.svg" alt="Imagem principal Mundo Invertido. Semana Frontend DIO.">
+        <h1 class="invert-element" role="text">
+            Uma jornada para quem não tem medo do desconhecido. O caminho para o
+            Mundo Invertido é incerto, repleto de obstáculos e perigos. Porém, a
+            recompensa é grande: salvar Hawkins e o mundo todo das garras de
+            Vecna. Você está preparado? Então clique no botão abaixo para entrar
+            no Mundo Invertido!
+        </h1>
+        <button id="switch-theme-button" onclick="switchTheme()">Inverter Mundos</button>
+    </header>
+
+    <section id="section-inverted-world" class="container">
+        <div class="section-texts">
+            <h2 id="mundo-invertido"></h2>
+            <p role="text">
+                O Mundo Invertido nasce uma cópia do nosso mundo mas com criaturas
+                e elementos a mais. Assim como no seriado Stranger Things. No Mundo
+                Invertido, ele é coberto por uma escuridão densa e uma névoa, dando
+                ao Mundo Invertido uma aparência e atmosfera sombrias. O Mundo Invertido
+                é o lar de criaturas aterrorizantes como o Demogorgon, o Devorador
+                de Mentes e o Vecna.
+            </p>
+        </div>
+        <img class="invert-element" src="assets/images/banner/inverted-world.svg" alt="Imagem do Mundo Invertido.">
+    </section>
+
+    <section class="container" id="section-challenges">
+        <div class="section-texts">
+            <h2 id="challenges"></h2>
+            <p role="text">
+                Um Demogorgon é uma criatura humanóide predadora que se originou
+                no Mundo Invertido. Sua aparência e comportamento assemelham-se a
+                um ser de pele flexível com garras, com sua cabeça abrindo como
+                uma flor para revelar uma boca cheia de dentes. Ele é conhecido por
+                sua força e velocidade, bem como sua capacidade de atravessar
+                dimensões, o que o torna um caçador mortal.
+            </p>
+        </div>
+        <img class="invert-element" src="assets/images/banner/challenges.svg" alt="Imagem dos desafios.">
+    </section>
+
+    <section class="container" id="section-mind-flayer">
+        <div class="section-texts">
+            <h2 id="mind-flayer"></h2>
+            <p role="text">
+                O Devorador de Mentes, também conhecido como "o Devorador de Mentes"
+                ou "a Sombra", é a principal força maligna no Mundo Invertido e a
+                principal ameaça à cidade de Hawkins. É uma entidade poderosa e
+                inteligente com a capacidade de controlar outras criaturas e até
+                mesmo influenciar as mentes dos humanos. Seu objetivo final é
+                invadir o Mundo Real e dominar a humanidade.
+            </p>
+        </div>
+        <img class="invert-element" src="assets/images/banner/mind-flayer.svg" alt="Imagem do Devorador de Mentes.">
+    </section>
+
+    <section class="container" id="section-vecna">
+        <div class="section-texts">
+            <h2 id="vecna"></h2>
+            <p role="text">
+                Vecna é o principal antagonista da quarta temporada de Stranger Things.
+                Ele é um ser humanoide que se tornou um monstro horripilante que habita
+                o Mundo Invertido. Vecna foi revelado como sendo Henry Creel, que se
+                tornou o primeiro sujeito de teste de Brenner e também o 001. Depois
+                de se tornar o 001, ele se tornou uma criatura horrível com poderes
+                psíquicos, que ele usa para matar suas vítimas quebrando seus ossos
+                e explodindo seus olhos.
+            </p>
+        </div>
+        <img class="invert-element" src="assets/images/banner/vecna.svg" alt="Imagem do Vecna.">
+    </section>
+
+    <section class="container" id="section-footer">
+        <div class="section-texts">
+            <p>
+                Feito por: {{ ansible_hostname }} - {{ current_time }}
+            </p>
+        </div>
+    </section>
+
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
