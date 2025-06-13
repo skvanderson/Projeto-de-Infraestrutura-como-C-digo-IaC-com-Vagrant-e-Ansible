@@ -9,8 +9,8 @@ Para executar este projeto, você precisará ter o seguinte software instalado e
     * [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * **Vagrant:** Ferramenta para construir e gerenciar ambientes de desenvolvimento virtuais.
     * [Download Vagrant](https://www.vagrantup.com/downloads)
-* **Ansible:** Ferramenta de automação de TI.
-    * [Instalação do Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html) (geralmente instalado via `pip` ou gerenciador de pacotes do seu OS)
+* **Visual Code:** IDE Para Desenvolvimento.
+    * [Download VsCode](https://code.visualstudio.com)
 * **Git:** Sistema de controle de versão.
     * [Download Git](https://git-scm.com/downloads)
 
@@ -82,7 +82,7 @@ end
 ```
 O arquivo Vagrantfile é um arquivo de definição que instrui o Vagrant sobre como a máquina virtual deve ser criada e configurada, utilizando o Ansible para realizar essa configuração.
 
-Agora é necessário a criação do arquivo playbook.yml
+Agora é necessário a criação do arquivo playbook.yml(Neste reposítório já está criado)
 
 ```
 ---
