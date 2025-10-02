@@ -1,10 +1,12 @@
 ---
 - hosts: all
   become: yes
+  
   tasks:
     - name: Atualiza o cache do apt
       apt:
         update_cache: yes
+        cache_valid_time: 3600
       tags:
         - packages
 
@@ -15,27 +17,37 @@
       tags:
         - packages
 
-    - name: Copia o restante dos arquivos web para o diretório do Nginx
+    - name: Remove página padrão do Nginx
+      file:
+        path: /var/www/html/index.nginx-debian.html
+        state: absent
+      tags:
+        - setup
+
+    - name: Copia TODO o conteúdo web para o diretório do Nginx
       ansible.builtin.copy:
-        src: files/ 
-        dest: /var/www/html
+        src: files/
+        dest: /var/www/html/
         owner: www-data
         group: www-data
         mode: '0644'
+        force: yes
+      tags:
+        - content
 
-
-    - name: Renderiza e copia a página index.html com o módulo template
-      ansible.builtin.template:
-        src: files/index.html.j2
-        dest: /var/www/html/index.html 
-        owner: www-data
-        group: www-data
-        mode: '0644'
-      notify:
-        - Reiniciar Nginx
-
-  handlers:
-    - name: Reiniciar Nginx
-      service:
+    - name: Habilita e inicia o serviço Nginx
+      systemd:
         name: nginx
-        state: restarted
+        enabled: yes
+        state: started
+      tags:
+        - service
+
+    - name: Verifica se o Nginx está rodando
+      uri:
+        url: http://localhost
+        return_content: yes
+      register: nginx_status
+      failed_when: nginx_status.status != 200
+      tags:
+        - verification

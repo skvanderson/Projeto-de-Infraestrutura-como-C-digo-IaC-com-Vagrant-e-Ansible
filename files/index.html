@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mundo Invertido | Semana Front-end</title>
-
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body class="light-theme" aria-label="O site está utilizando o tema light" role="body">
     <header aria-label="Cabeçalho da página.">
       <audio id="music" autoplay>
-        <source src="../assets/musics/normal-world.mpeg" aria-details="Audio do site" />
+        <source src="assets/musics/normal-world.mpeg" aria-details="Audio do site" />
       </audio>
       <div class="header-content">
         <img class="invert-element" src="assets/images/banner/logo.svg" alt="Imagem principal Mundo Invertido. Semana Frontend DIO." />
@@ -27,7 +26,6 @@
     </header>
 
     <main>
-
       <section id="section-inverted-world" class="container">
         <div class="section-texts">
           <h2>O Mundo Invertido</h2>
@@ -143,12 +141,13 @@
         const music = theme === 'light-theme' ? 'normal-world.mpeg' : 'inverted-world.mpeg'
 
         const audio = document.getElementById('music');
-        audio.src = `../assets/musics/${music}`;
+        audio.src = `assets/musics/${music}`;
         audio.play();
         audio.volume = 0.2;
       }
     </script>
 
-    <script src="../assets/js/main.js" type="module"></script>
+    <script src="assets/js/main.js" type="module"></script>
   </body>
 </html>
+EOF
